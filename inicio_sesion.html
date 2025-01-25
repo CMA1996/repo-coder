@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Función para redirigir sin enviar datos
+        function redirectToHome(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+            window.location.href = 'home.html'; // Redirigir a home.html
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>Mis Finanzas </header>
+
+    <h1>Inicio de sesión</h1>
+
+    <form action="home.html" method="POST" onsubmit="redirectToHome(event)">
+        <input type="text" id="Usuario" name="Usuario" placeholder="Usuario" required>
+        <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+        <button type="submit">Entrar</button>
+
+        <!-- hacer que al apretar boton "entrar" direccione a pagina home.html sin invio de datos-->
+    </form>
+
+    <a href="index.HTML">Volver a Inicio</a>
+
+
+</body>
+
+</html>
