@@ -1,0 +1,59 @@
+header {background-color: rgba(26, 11, 39, 0.61);}
+
+body {background-color: rgb(28, 67, 84);
+    margin: 20px;
+    background-image: url(Imagen.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {font-weight: 50;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {text-decoration:underline;}
+
+p{background-color: rgb(11, 15, 2);
+    color: aliceblue;
+    font-size: 14;
+}
+
+a{ color: black;
+text-decoration: underline;}
+
+li {font-size: 15px; }
+
+div {background-color: aqua;
+border: 2px solid blue;}
+
+.redes-sociales {text-align: center;
+    justify-content: center;
+    display: flex inline;
+    width: 30%;
+}
+
+.item {
+    background-color: aliceblue;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 20px;
+  }
+  
+.grid-container{ display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Por defecto, 3 columnas */
+    gap: 20px; /* Espacio entre los elementos */
+  }
+  
+  /* Media query para pantallas de 600px o menos */
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+
+}
+
+
+
