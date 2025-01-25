@@ -19,17 +19,26 @@
 
     <header>Mis Finanzas </header>
 
-    <h1>Inicio de sesión</h1>
+    <main>
+        <h1>Inicio de sesión</h1>
 
-    <form action="home.html" method="POST" onsubmit="redirectToHome(event)">
-        <input type="text" id="Usuario" name="Usuario" placeholder="Usuario" required>
-        <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
-        <button type="submit">Entrar</button>
+        <form action="home.html" method="POST" onsubmit="redirectToHome(event)">
+            <input type="text" id="Usuario" name="Usuario" placeholder="Usuario" required>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
 
-        <!-- hacer que al apretar boton "entrar" direccione a pagina home.html sin invio de datos-->
-    </form>
+            <!-- hacer que al apretar boton "entrar" direccione a pagina home.html sin invio de datos-->
+        </form>
+        <a href="index.html">Volver a Inicio</a>
+    </main>
 
-    <a href="index.html">Volver a Inicio</a>
+    <footer>
+        <h4>Encontranos en:</h4>
+
+        <div class="redes-sociales"> Instagram</div>
+        <div class="redes-sociales"> X </div>
+        <div class="redes-sociales">Telegram </div>
+    </footer>
 
 
 </body>
