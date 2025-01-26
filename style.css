@@ -91,27 +91,36 @@ table tr:nth-child(even) td {
   background-color: #fff;
 }
 
-/* Media query para pantallas de 600px o menos */
+
 @media (max-width: 600px) {
   .grid-container {
     grid-template-columns: 1fr;
-    /* 1 columna en pantallas pequeñas */
   }
 
 }
+
+.grilla_presupuesto {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.grilla {
+  min-width: 700px;
+}
+
 
 @media (max-width: 450px) {
   .tabla {
     width: 100%;
   }
 
-  ..grilla_presupuesto {
+  .grilla_presupuesto {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
 
   .grilla {
-    min-width: 1000px;
+    min-width: 700px;
   }
 }
 
@@ -120,13 +129,13 @@ table tr:nth-child(even) td {
     width: 100%;
   }
 
-  ..grilla_presupuesto {
+  .grilla_presupuesto {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
 
   .grilla {
-    min-width: 900px;
+    min-width: 800px;
   }
 }
 
