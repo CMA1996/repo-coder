@@ -91,6 +91,12 @@ table tr:nth-child(even) td {
   background-color: #fff;
 }
 
+th:first-child,
+td:first-child {
+  position: sticky;
+  left: 0;
+    z-index: 1;
+}
 
 @media (max-width: 600px) {
   .grid-container {
