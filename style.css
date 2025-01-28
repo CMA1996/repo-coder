@@ -1,11 +1,9 @@
-header {
-  background-color: rgba(26, 11, 39, 0.61);
-}
+
 
 body {
   background-color: rgb(28, 67, 84);
   margin: 20px;
-  background-image: url(Imagen.jpg);
+  background-image: url(imagenes/Imagen.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -40,6 +38,11 @@ li {
 div {
   background-color: aqua;
   border: 2px solid blue;
+}
+
+.texto {
+  background-color: transparent;
+  border: none;
 }
 
 .redes-sociales {
@@ -153,4 +156,62 @@ td:first-child {
   .grilla {
     width: 100%;
   }
+}
+
+.presentacion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+}
+
+
+.presentacion .item {
+  width: 30%;
+  box-sizing: border-box; 
+  margin-bottom: 20px; 
+  color: #ddd;
+  background-color: grey;
+}
+
+.presentacion .item p, ul, li{
+    color: black;
+    background-color: transparent;
+}
+
+.presentacion .item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.item h3 {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+@media (max-width: 500px) {
+  .presentacion {
+      flex-direction: column;
+  }
+
+  .presentacion .item {
+      width: 100%;
+  }
+}
+
+.redes-sociales {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.redes-sociales img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  margin-right: 10px; 
+  
 }
