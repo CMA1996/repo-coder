@@ -1,0 +1,129 @@
+body {
+    background-color: grey;
+    margin: 20px;
+    }
+  
+  h1 {
+    font-weight: 50;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  h2 {
+    text-decoration: underline;
+  }
+  
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  li {
+    font-size: 15px;
+  }
+  
+  
+  .texto {
+    background-color: transparent;
+    border: none;
+  }
+  
+  
+  .item {
+    background-color: aliceblue;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+     gap: 20px;
+     background-color: transparent;
+     border: none;
+  }
+
+  .grid-container p {
+    background-color: aliceblue;
+    color: rgb(11, 15, 2);
+    font-size: 14;
+      }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  th {
+    background-color: #333;
+    color: white;
+  }
+  
+  td {
+    background-color: #f9f9f9;
+  }
+  
+  table tr:nth-child(even) td {
+    background-color: #fff;
+  }
+  
+  th:first-child,
+  td:first-child {
+    position: sticky;
+    left: 0;
+      z-index: 1;
+  }
+  
+  .grilla_presupuesto {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .grilla {
+    min-width: 700px;
+  }
+  
+  .presentacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+  }
+  
+  
+  .presentacion .item {
+    width: 30%;
+    box-sizing: border-box; 
+    margin-bottom: 20px; 
+    color: #ddd;
+    background-color: rgb(28, 67, 84);
+  }
+  
+  .presentacion .item p, ul, li{
+      color: black;
+      background-color: transparent;
+  }
+  
+  .presentacion .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .item h3 {
+    color: black;
+    border-bottom: 2px solid black;
+  }
