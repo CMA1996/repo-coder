@@ -1,9 +1,15 @@
-body {
+html, body {
     background-color: grey;
-    margin: 20px;
-    height: 4000px;
+    margin: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     }
   
+    main{
+      flex: 1;
+    }
+
   h1 {
     font-weight: 50;
     text-decoration: underline;
