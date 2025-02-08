@@ -206,14 +206,20 @@ td:first-child {
 
 .presentacion {
   display: flex;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: transparent;
   border: none;
 }
 
-.presentacion .item {
+.presentacion a {
+  display: block;
   width: 30%;
+}
+
+.presentacion .item {
+  width: 100%;
   box-sizing: border-box;
   margin-bottom: 20px;
   color: #ddd;
@@ -234,6 +240,10 @@ td:first-child {
 .item h3 {
   color: black;
   border-bottom: 2px solid black;
+}
+
+.presentacion a:hover .item {
+  background-color: lightblue;
 }
 
 /*# sourceMappingURL=style.css.map */

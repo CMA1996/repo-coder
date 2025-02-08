@@ -1,6 +1,5 @@
- // scripts.js
-
-let isLoggedIn = true; // Cambia a true para simular un usuario logeado
+// Estado de login: cambiar a true para simular que el usuario está loggeado.
+let isLoggedIn = false;
 
 // Función para actualizar la barra de navegación según el estado de login
 function updateNavigation() {
@@ -9,44 +8,57 @@ function updateNavigation() {
     const homeLink = document.getElementById("homelink");
     const dataEntryLink = document.getElementById("dataentrylink");
     const presupuestoLink = document.getElementById("presupuestolink");
+    const datoLink = document.getElementById("datolink");
 
-    // Si el usuario está logeado
+    // Si el usuario está loggeado
     if (isLoggedIn) {
-        loginLink.style.display = "none";
-        registerLink.style.display = "none";
-        homeLink.style.display = "inline-block";
-        dataEntryLink.style.display = "inline-block";
-        presupuestoLink.style.display = "inline-block";
+        loginLink.style.display = "none"; // Oculta el enlace de inicio de sesión
+        registerLink.style.display = "none"; // Oculta el enlace de registro
+        homeLink.style.display = "inline-block"; // Muestra el enlace Home
+        dataEntryLink.style.display = "inline-block"; // Muestra el enlace Carga datos
+        presupuestoLink.style.display = "inline-block"; // Muestra el enlace Presupuesto
+        datoLink.style.display = "inline-block"; // Muestra el enlace Datos
     } else {
-        loginLink.style.display = "inline-block";
-        registerLink.style.display = "inline-block";
-        homeLink.style.display = "none";
-        dataEntryLink.style.display = "none";
-        presupuestoLink.style.display = "none";
+        loginLink.style.display = "inline-block"; // Muestra el enlace de inicio de sesión
+        registerLink.style.display = "inline-block"; // Muestra el enlace de registro
+        homeLink.style.display = "none"; // Oculta el enlace Home
+        dataEntryLink.style.display = "none"; // Oculta el enlace Carga datos
+        presupuestoLink.style.display = "none"; // Oculta el enlace Presupuesto
+        datoLink.style.display = "none"; // Oculta el enlace Datos
     }
 }
 
-// Ejecutar la función para actualizar la navegación al cargar la página
-window.onload = function() {
-    updateNavigation();
-    
-    // Redirigir a la página de login si el usuario no está logeado y quiere acceder a "Carga datos"
-    document.getElementById("dataentrylink").addEventListener("click", function (event) {
-        if (!isLoggedIn) {
-            event.preventDefault(); // Prevenir la navegación
-            alert("Por favor, inicia sesión primero.");
-            window.location.href = "pages/inicio_sesion.html"; // Redirigir a la página de login
-        }
-    });
+// Función para manejar la redirección de los enlaces cuando el usuario no está loggeado
+function setupNavigationRedirection() {
+    // Enlaces protegidos
+    const protectedLinks = [
+        { id: "homelink", url: "pages/home.html" },
+        { id: "dataentrylink", url: "pages/dataentry.html" },
+        { id: "presupuestolink", url: "pages/presupuesto.html" },
+        { id: "datolink", url: "pages/dato.html" }
+    ];
 
-    // Redirigir a la página de login si el usuario no está logeado y quiere acceder a "Presupuesto"
-    document.getElementById("presupuestolink").addEventListener("click", function (event) {
-        if (!isLoggedIn) {
-            event.preventDefault(); // Prevenir la navegación
-            alert("Por favor, inicia sesión primero.");
-            window.location.href = "pages/inicio_sesion.html"; // Redirigir a la página de login
+    // Configurar la redirección para los enlaces protegidos
+    protectedLinks.forEach(link => {
+        const element = document.getElementById(link.id);
+        if (element) {
+            element.addEventListener("click", function(event) {
+                // Verificar si el usuario no está loggeado
+                if (!isLoggedIn) {
+                    event.preventDefault(); // Prevenir la acción por defecto del enlace (navegar a la URL)
+                    alert("Por favor, inicia sesión primero."); // Mostrar mensaje de alerta
+                    window.location.href = "pages/inicio_sesion.html"; // Redirigir a la página de inicio de sesión
+                }
+            });
         }
     });
 }
+
+// Ejecutar las funciones cuando la página se carga completamente
+window.onload = function() {
+    updateNavigation(); // Actualiza la barra de navegación según el estado de login
+    setupNavigationRedirection(); // Configura la redirección de los enlaces protegidos
+};
+
 
 
