@@ -1,6 +1,6 @@
 header {
   background-image: linear-gradient(rgb(28, 67, 84), grey);
-  text-decoration: underline;
+  text-decoration: none;
   color: rgba(255, 255, 255, 0.686);
   width: 100%;
   height: 100px;
@@ -8,7 +8,6 @@ header {
   margin: 0;
   box-sizing: border-box;
 }
-
 header a {
   color: rgba(255, 255, 255, 0.686);
   text-decoration: underline;
@@ -40,10 +39,18 @@ h2 {
 a {
   color: black;
   text-decoration: none;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
 }
 
-li {
+ul li {
   font-size: 15px;
+  display: inline-block;
+  text-decoration: dashed;
+  margin-right: 20px;
+  text-align: center;
+  justify-content: center;
 }
 
 .texto {
@@ -55,7 +62,10 @@ li {
   background-color: aliceblue;
   border: 1px solid gray;
   text-align: center;
-  padding: 20px;
+  padding: 0px;
+}
+.item:hover {
+  background-color: lightblue;
 }
 
 .grid-container {
@@ -64,6 +74,7 @@ li {
   gap: 20px;
   background-color: transparent;
   border: none;
+  padding: 20px;
 }
 
 .grid-container p {
@@ -72,6 +83,84 @@ li {
   font-size: 14;
 }
 
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 450px) {
+  .tabla {
+    width: 100%;
+  }
+  .grilla_presupuesto {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .grilla {
+    min-width: 700px;
+  }
+}
+@media (min-width: 450px) and (max-width: 1100px) {
+  .tabla {
+    width: 100%;
+  }
+  .grilla_presupuesto {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .grilla {
+    min-width: 800px;
+  }
+}
+@media (min-width: 1100px) {
+  .grilla_presupuesto {
+    overflow: visible;
+  }
+  .grilla {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .presentacion {
+    flex-direction: column;
+  }
+  .presentacion .item {
+    width: 100%;
+  }
+}
+footer {
+  background-image: linear-gradient(grey, rgb(28, 67, 84));
+  color: rgba(255, 255, 255, 0.686);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+footer a {
+  color: rgba(255, 255, 255, 0.686);
+}
+footer .redes-sociales {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+footer .redes-sociales img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-right: 10px;
+  opacity: 0;
+  animation: animacion 2s infinite;
+}
+
+@keyframes animacion {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -145,88 +234,6 @@ td:first-child {
 .item h3 {
   color: black;
   border-bottom: 2px solid black;
-}
-
-@media (max-width: 600px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 450px) {
-  .tabla {
-    width: 100%;
-  }
-  .grilla_presupuesto {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .grilla {
-    min-width: 700px;
-  }
-}
-@media (min-width: 450px) and (max-width: 1100px) {
-  .tabla {
-    width: 100%;
-  }
-  .grilla_presupuesto {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .grilla {
-    min-width: 800px;
-  }
-}
-@media (min-width: 1100px) {
-  .grilla_presupuesto {
-    overflow: visible;
-  }
-  .grilla {
-    width: 100%;
-  }
-}
-@media (max-width: 500px) {
-  .presentacion {
-    flex-direction: column;
-  }
-  .presentacion .item {
-    width: 100%;
-  }
-}
-footer {
-  background-image: linear-gradient(grey, rgb(28, 67, 84));
-  color: rgba(255, 255, 255, 0.686);
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-footer a {
-  color: rgba(255, 255, 255, 0.686);
-}
-
-.redes-sociales {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  margin: 10px;
-}
-
-.redes-sociales img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-right: 10px;
-  opacity: 0;
-  animation: animacion 2s infinite;
-}
-
-@keyframes animacion {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

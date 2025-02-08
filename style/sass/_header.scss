@@ -1,16 +1,15 @@
 header {
   background-image: linear-gradient(rgb(28, 67, 84), grey);
-  text-decoration: underline;
+  text-decoration: none;
   color: rgba(255, 255, 255, 0.686);
   width: 100%;
   height: 100px;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  a {
+    color: rgba(255, 255, 255, 0.686);
+    text-decoration: underline;
+  }
 }
-
-header a {
-  color: rgba(255, 255, 255, 0.686);
-  text-decoration: underline;
- }
-

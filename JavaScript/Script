@@ -1,0 +1,50 @@
+ // scripts.js
+
+let isLoggedIn = false; // Cambia a true para simular un usuario logeado
+
+// Función para actualizar la barra de navegación según el estado de login
+function updateNavigation() {
+    const loginLink = document.getElementById("loginlink");
+    const registerLink = document.getElementById("registrolink");
+    const homeLink = document.getElementById("homelink");
+    const dataEntryLink = document.getElementById("dataentrylink");
+    const presupuestoLink = document.getElementById("presupuestolink");
+
+    // Si el usuario está logeado
+    if (isLoggedIn) {
+        loginLink.style.display = "none";
+        registerLink.style.display = "none";
+        homeLink.style.display = "inline-block";
+        dataEntryLink.style.display = "inline-block";
+        presupuestoLink.style.display = "inline-block";
+    } else {
+        loginLink.style.display = "inline-block";
+        registerLink.style.display = "inline-block";
+        homeLink.style.display = "none";
+        dataEntryLink.style.display = "none";
+        presupuestoLink.style.display = "none";
+    }
+}
+
+// Ejecutar la función para actualizar la navegación al cargar la página
+window.onload = function() {
+    updateNavigation();
+    
+    // Redirigir a la página de login si el usuario no está logeado y quiere acceder a "Carga datos"
+    document.getElementById("dataentrylink").addEventListener("click", function (event) {
+        if (!isLoggedIn) {
+            event.preventDefault(); // Prevenir la navegación
+            alert("Por favor, inicia sesión primero.");
+            window.location.href = "pages/inicio_sesion.html"; // Redirigir a la página de login
+        }
+    });
+
+    // Redirigir a la página de login si el usuario no está logeado y quiere acceder a "Presupuesto"
+    document.getElementById("presupuestolink").addEventListener("click", function (event) {
+        if (!isLoggedIn) {
+            event.preventDefault(); // Prevenir la navegación
+            alert("Por favor, inicia sesión primero.");
+            window.location.href = "pages/inicio_sesion.html"; // Redirigir a la página de login
+        }
+    });
+}
