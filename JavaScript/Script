@@ -1,6 +1,6 @@
  // scripts.js
 
-let isLoggedIn = false; // Cambia a true para simular un usuario logeado
+let isLoggedIn = true; // Cambia a true para simular un usuario logeado
 
 // Función para actualizar la barra de navegación según el estado de login
 function updateNavigation() {
@@ -48,3 +48,5 @@ window.onload = function() {
         }
     });
 }
+
+
