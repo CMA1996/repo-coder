@@ -1,5 +1,5 @@
 // Estado de login: cambiar a true para simular que el usuario está loggeado.
-let isLoggedIn = false;
+let isLoggedIn = true;
 
 // Función para actualizar la barra de navegación según el estado de login
 function updateNavigation() {
@@ -7,7 +7,7 @@ function updateNavigation() {
     document.getElementById("registrolink").style.display = isLoggedIn ? "none" : "inline-block";
 
     // IDs de los enlaces protegidos
-    const protectedIds = ["homelink", "dataentrylink", "presupuestolink", "datolink"];
+    const protectedIds = ["transaccioneslink", "dataentrylink", "presupuestolink", "datolink"];
 
     protectedIds.forEach(id => {
         const link = document.getElementById(id);
@@ -21,7 +21,7 @@ function updateNavigation() {
 function setupNavigationRedirection() {
     // Lista de enlaces protegidos
     const protectedLinks = [
-        { id: "homelink", url: "pages/home.html" },
+        { id: "transaccioneslink", url: "pages/transacciones.html" },
         { id: "dataentrylink", url: "pages/dataentry.html" },
         { id: "presupuestolink", url: "pages/presupuesto.html" },
         { id: "datolink", url: "pages/dato.html" },
