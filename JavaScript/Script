@@ -3,51 +3,40 @@ let isLoggedIn = false;
 
 // Función para actualizar la barra de navegación según el estado de login
 function updateNavigation() {
-    const loginLink = document.getElementById("loginlink");
-    const registerLink = document.getElementById("registrolink");
-    const homeLink = document.getElementById("homelink");
-    const dataEntryLink = document.getElementById("dataentrylink");
-    const presupuestoLink = document.getElementById("presupuestolink");
-    const datoLink = document.getElementById("datolink");
+    document.getElementById("loginlink").style.display = isLoggedIn ? "none" : "inline-block";
+    document.getElementById("registrolink").style.display = isLoggedIn ? "none" : "inline-block";
 
-    // Si el usuario está loggeado
-    if (isLoggedIn) {
-        loginLink.style.display = "none"; // Oculta el enlace de inicio de sesión
-        registerLink.style.display = "none"; // Oculta el enlace de registro
-        homeLink.style.display = "inline-block"; // Muestra el enlace Home
-        dataEntryLink.style.display = "inline-block"; // Muestra el enlace Carga datos
-        presupuestoLink.style.display = "inline-block"; // Muestra el enlace Presupuesto
-        datoLink.style.display = "inline-block"; // Muestra el enlace Datos
-    } else {
-        loginLink.style.display = "inline-block"; // Muestra el enlace de inicio de sesión
-        registerLink.style.display = "inline-block"; // Muestra el enlace de registro
-        homeLink.style.display = "none"; // Oculta el enlace Home
-        dataEntryLink.style.display = "none"; // Oculta el enlace Carga datos
-        presupuestoLink.style.display = "none"; // Oculta el enlace Presupuesto
-        datoLink.style.display = "none"; // Oculta el enlace Datos
-    }
+    // IDs de los enlaces protegidos
+    const protectedIds = ["homelink", "dataentrylink", "presupuestolink", "datolink"];
+
+    protectedIds.forEach(id => {
+        const link = document.getElementById(id);
+        if (link) {
+            link.style.display = isLoggedIn ? "inline-block" : "none";
+        }
+    });
 }
 
-// Función para manejar la redirección de los enlaces cuando el usuario no está loggeado
+// Función para manejar la redirección de los enlaces protegidos
 function setupNavigationRedirection() {
-    // Enlaces protegidos
+    // Lista de enlaces protegidos
     const protectedLinks = [
         { id: "homelink", url: "pages/home.html" },
         { id: "dataentrylink", url: "pages/dataentry.html" },
         { id: "presupuestolink", url: "pages/presupuesto.html" },
-        { id: "datolink", url: "pages/dato.html" }
+        { id: "datolink", url: "pages/dato.html" },
+        { id: "condicion1", loggedInurl: "pages/dato.html" }, // Enlace en el body
+        { id: "condicion2", loggedInurl: "pages/home.html" }  // Enlace en el body
     ];
 
-    // Configurar la redirección para los enlaces protegidos
     protectedLinks.forEach(link => {
         const element = document.getElementById(link.id);
         if (element) {
             element.addEventListener("click", function(event) {
-                // Verificar si el usuario no está loggeado
                 if (!isLoggedIn) {
-                    event.preventDefault(); // Prevenir la acción por defecto del enlace (navegar a la URL)
-                    alert("Por favor, inicia sesión primero."); // Mostrar mensaje de alerta
-                    window.location.href = "pages/inicio_sesion.html"; // Redirigir a la página de inicio de sesión
+                    event.preventDefault(); // Evita la redirección automática del enlace
+                    alert("Debes iniciar sesión para acceder a esta sección.");
+                    window.location.href = "pages/inicio_sesion.html"; // Redirigir a inicio de sesión
                 }
             });
         }
@@ -55,10 +44,10 @@ function setupNavigationRedirection() {
 }
 
 // Ejecutar las funciones cuando la página se carga completamente
-window.onload = function() {
-    updateNavigation(); // Actualiza la barra de navegación según el estado de login
-    setupNavigationRedirection(); // Configura la redirección de los enlaces protegidos
-};
+document.addEventListener("DOMContentLoaded", function() {
+    updateNavigation();
+    setupNavigationRedirection();
+});
 
 
 
