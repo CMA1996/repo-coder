@@ -2,6 +2,22 @@
     .grid-container {
       grid-template-columns: 1fr;
     }
+
+    ul {
+      flex-direction: column;
+    }
+
+    header a {
+      padding: 8px 12px;
+    }
+  
+    .presentacion {
+      grid-template-columns: 1fr;
+    }
+  
+    .item {
+      margin-bottom: 20px;
+    }
 }
     
 @media (max-width: 450px) {

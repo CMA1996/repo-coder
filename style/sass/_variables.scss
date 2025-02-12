@@ -42,8 +42,9 @@ table {
   }
   
   .presentacion {
-    display: flex;
+    display: grid;
     gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: transparent;
@@ -52,13 +53,18 @@ table {
   
   .presentacion a {
     display: block;
-    width: 30%;
+    width: 100%;
+    height: 100%;
 } 
 
   .presentacion .item {
     width: 100%;
+    height: 100%;
     box-sizing: border-box; 
-    margin-bottom: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px; 
     color: #ddd;
     background-color: rgb(28, 67, 84);
   }
