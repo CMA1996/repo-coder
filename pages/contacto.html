@@ -23,19 +23,44 @@
     </header>
 
 
-    <h1 class="text-center">Escribinos</h1>
-
-
-
+    <section class="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Completa el formulario y nos pondremos en contacto contigo a la brevedad.</p>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+    </section>
 
 </body>
 
 <footer>
     <h4>Encontranos en:</h4>
 
-        <div class="redes-sociales"> <a href="https://www.instagram.com/">Instagram</a>
-        </div>
-        <div class="redes-sociales"> <a href="https://x.com/?lang=es&mx=2">x</a> </div>
-        <div class="redes-sociales"> <a href="https://web.telegram.org/a/">Telegram</a>
-        </div>
+    <div class="redes-sociales">  <a href="https://www.instagram.com/" target="_blank"><img src="../imagenes/instagram.png" alt="Instagram"></a>
+    </div>
+    <div class="redes-sociales"> <a href="https://x.com/?lang=es&mx=2" target="_blank"><img src="../imagenes/x.png" alt="X"></a> </div>
+    <div class="redes-sociales"> <a href="https://web.telegram.org/a/" target="_blank"><img src="../imagenes/telegram.png" alt="Telegram"></a>
+    </div>
 </footer>
