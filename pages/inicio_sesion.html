@@ -9,9 +9,9 @@
     <title>Mis Finanzas - Inicio de Sesión</title>
     <link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/x-icon">
     <script>
-       
+
         function redirectToHome(event) {
-            event.preventDefault(); 
+            event.preventDefault();
             window.location.href = '../index.html';
             return false;
         }
@@ -21,7 +21,15 @@
 
 <body>
 
-    <header>Mis Finanzas </header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="registrarse.html">Regístrate </a></li>
+                <li><a href="contacto.html">contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <h1>Inicio de sesión</h1>
@@ -31,20 +39,22 @@
             <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
             <button type="submit">Entrar</button>
 
+
             <!-- al hacer click en entrar redirecciona a index.html para ver como deberia ser la funcionalidad de la pagina para el usuario loggeado es necesario ir a JavaScript/Script y realizar el cambio de "true" en let isLoggedIn = True;-->
         </form>
 
-        <p>¿No tienes cuenta? <a href="registrarse.html"><button>Regístrate</button> </a></p>
 
     </main>
 
     <footer>
-        <h4>Encontranos en:</h4>
 
-        <div class="redes-sociales">  <a href="https://www.instagram.com/" target="_blank"><img src="../imagenes/instagram.png" alt="Instagram"></a>
+        <div class="redes-sociales"> <a href="https://www.instagram.com/" target="_blank"><img
+                    src="../imagenes/instagram.png" alt="Instagram"></a>
         </div>
-        <div class="redes-sociales"> <a href="https://x.com/?lang=es&mx=2" target="_blank"><img src="../imagenes/x.png" alt="X"></a> </div>
-        <div class="redes-sociales"> <a href="https://web.telegram.org/a/" target="_blank"><img src="../imagenes/telegram.png" alt="Telegram"></a>
+        <div class="redes-sociales"> <a href="https://x.com/?lang=es&mx=2" target="_blank"><img src="../imagenes/x.png"
+                    alt="X"></a> </div>
+        <div class="redes-sociales"> <a href="https://web.telegram.org/a/" target="_blank"><img
+                    src="../imagenes/telegram.png" alt="Telegram"></a>
         </div>
     </footer>
 
