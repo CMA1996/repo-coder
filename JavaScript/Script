@@ -1,5 +1,5 @@
 // Estado de login: cambiar a true para simular que el usuario está loggeado.
-let isLoggedIn = false;
+let isLoggedIn = true;
 
 // Función para actualizar la barra de navegación según el estado de login
 function updateNavigation() {
